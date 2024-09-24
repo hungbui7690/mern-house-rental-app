@@ -3,6 +3,7 @@ import { useAuthStore } from '../zustand/useAuthStore'
 import ArrowLeftIcon from './icons/ArrowLeftIcon'
 import ArrowRightIcon from './icons/ArrowRightIcon'
 import UserPlusIcon from './icons/UserPlusIcon'
+import DefaultAvatar from '/avatar1.png'
 
 const MenuModal = ({ setIsMenuOpen }) => {
   const { logout, user } = useAuthStore()
@@ -19,6 +20,20 @@ const MenuModal = ({ setIsMenuOpen }) => {
         >
           ❌
         </div>
+        {user && (
+          <Link
+            to={'/houses'}
+            className='flex gap-2 mb-4 pb-4 border-b border-b-slate-300 cursor-pointer items'
+          >
+            <img
+              src={user?.profileImage || DefaultAvatar}
+              alt='profileImage'
+              className='w-6 h-6 object-cover'
+            />
+            <span className='font-bold text-gray-600'>My Account</span>
+          </Link>
+        )}
+
         {!user ? (
           <>
             <Link to={'/login'} className='flex gap-2 mb-2'>
