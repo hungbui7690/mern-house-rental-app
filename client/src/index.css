@@ -20,3 +20,30 @@ button.primary {
   background-color: #f5385d;
   @apply bg-primary p-2 w-full text-white rounded-2xl;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #979797;
+}
+::-webkit-scrollbar-thumb {
+  background: #696969;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #686868;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.066);
+  box-shadow: 0 0 0 0 rgba(239, 239, 239, 0.153);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.099);
+}
+.glass:hover {
+  border: 1px solid rgba(255, 255, 255, 0.266);
+}
