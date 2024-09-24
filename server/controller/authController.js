@@ -60,4 +60,8 @@ const logout = async (req, res) => {
   res.status(StatusCodes.OK).json({ message: 'Logged out successfully' })
 }
 
-export { register, login, logout }
+const getProfile = async (req, res) => {
+  res.status(StatusCodes.OK).json({ user: req.user })
+}
+
+export { register, login, logout, getProfile }

@@ -11,6 +11,7 @@ import notFoundMiddleware from './middleware/not-found.js'
 import errorHandlerMiddleware from './middleware/error-handler.js'
 import { connectDB } from './db/connect.js'
 import authRouter from './routes/authRoutes.js'
+import houseRouter from './routes/houseRoutes.js'
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -24,6 +25,7 @@ app.use(cookieParser(process.env.JWT_SECRET))
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }))
 
 app.use('/api/v1/auth', authRouter)
+app.use('/api/v1/houses', houseRouter)
 
 app.use(notFoundMiddleware)
 app.use(errorHandlerMiddleware)

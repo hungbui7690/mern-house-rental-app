@@ -3,7 +3,6 @@ import User from '../model/User.js'
 import { UnauthenticatedError, NotFoundError } from '../errors/index.js'
 
 const authenticateUser = async (req, res, next) => {
-  // get token from signed cookie
   const token = req.signedCookies.houseRentalToken
   if (!token) {
     throw new UnauthenticatedError('Unauthenticated - No Token Provided')
@@ -21,9 +20,8 @@ const authenticateUser = async (req, res, next) => {
     throw new NotFoundError('User not found')
   }
 
-  // attach user to req object
+  // attach user to request object
   req.user = user
-
   next()
 }
 
