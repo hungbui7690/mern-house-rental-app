@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 input[type='text'],
 input[type='password'],
 input[type='email'],

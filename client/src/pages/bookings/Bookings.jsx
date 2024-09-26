@@ -1,9 +1,9 @@
-import { DropdownList } from '../../components'
+import { AccountNavbar } from '../../components'
 
 const Bookings = () => {
   return (
     <div>
-      <DropdownList />
+      <AccountNavbar />
       <div className='text-center'>All Bookings</div>
       <div className='mt-4'></div>
     </div>
